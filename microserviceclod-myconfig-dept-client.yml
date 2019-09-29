@@ -8,7 +8,7 @@ server:
 spring: 
    profiles: dev
    application: 
-    name: microservicecloud-config-dept-client
+    name: microservicecloud-myconfig-dept-client
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
@@ -36,17 +36,17 @@ eureka:
     prefer-ip-address: true
  
 info:
-  app.name: atguigu-microservicecloud-springcloudconfig01
-  company.name: www.atguigu.com
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
+  app.name: ${spring.application.name}
+  company.name: com.lw
+  build.artifactId: ${project.artifactId}
+  build.version: ${project.version}
 ---
 server:
   port: 8006
 spring: 
    profiles: test
    application: 
-    name: microservicecloud-config-dept-client
+    name: microservicecloud-myconfig-dept-client
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
